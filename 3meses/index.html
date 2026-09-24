@@ -1,0 +1,1935 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>🌌 Nuestro propio universo ❤️</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background: #02010a;
+    color: white;
+    font-family: "Segoe UI", sans-serif;
+}
+
+
+/* =========================
+   FONDO
+========================= */
+
+.space {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            #160b32 0%,
+            #08051b 35%,
+            #02010a 75%
+        );
+
+    z-index: -10;
+}
+
+
+.stars,
+.stars2,
+.stars3 {
+    position: absolute;
+    inset: -50%;
+    background-repeat: repeat;
+    animation: starsMove linear infinite;
+}
+
+
+.stars {
+    width: 2px;
+    height: 2px;
+
+    background-image:
+        radial-gradient(
+            circle,
+            white 1px,
+            transparent 1.5px
+        );
+
+    background-size: 70px 70px;
+    animation-duration: 80s;
+    opacity: .7;
+}
+
+
+.stars2 {
+    width: 3px;
+    height: 3px;
+
+    background-image:
+        radial-gradient(
+            circle,
+            #c8d9ff 1px,
+            transparent 1.5px
+        );
+
+    background-size: 130px 130px;
+    animation-duration: 120s;
+    opacity: .5;
+}
+
+
+.stars3 {
+    width: 4px;
+    height: 4px;
+
+    background-image:
+        radial-gradient(
+            circle,
+            #ffffff 1.2px,
+            transparent 1.8px
+        );
+
+    background-size: 210px 210px;
+    animation-duration: 170s;
+    opacity: .4;
+}
+
+
+@keyframes starsMove {
+
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(300px, 300px);
+    }
+
+}
+
+
+/* =========================
+   AURORAS
+========================= */
+
+.aurora {
+
+    position: absolute;
+
+    width: 90vw;
+    height: 45vh;
+
+    left: 5%;
+    top: -5%;
+
+    filter: blur(35px);
+
+    opacity: .55;
+
+    transform: rotate(-8deg);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(0,255,180,.3),
+            rgba(90,0,255,.35),
+            rgba(0,255,220,.25),
+            transparent
+        );
+
+    animation:
+        aurora 8s ease-in-out infinite alternate;
+}
+
+
+.aurora.two {
+
+    top: 12%;
+    left: -15%;
+
+    opacity: .3;
+
+    transform: rotate(15deg);
+
+    animation-delay: -3s;
+}
+
+
+@keyframes aurora {
+
+    0% {
+
+        transform:
+            translateX(-80px)
+            rotate(-8deg)
+            scaleY(.8);
+
+        opacity: .25;
+    }
+
+    50% {
+        opacity: .65;
+    }
+
+    100% {
+
+        transform:
+            translateX(100px)
+            rotate(8deg)
+            scaleY(1.15);
+
+        opacity: .4;
+    }
+
+}
+
+
+/* =========================
+   CONTENIDO
+========================= */
+
+.page {
+
+    min-height: 100vh;
+
+    position: relative;
+
+    padding:
+        35px
+        20px
+        80px;
+}
+
+
+header {
+
+    text-align: center;
+
+    margin-bottom: 20px;
+
+    animation:
+        fadeDown 1.5s ease;
+}
+
+
+header h1 {
+
+    font-size:
+        clamp(
+            2rem,
+            6vw,
+            4.5rem
+        );
+
+    letter-spacing: 3px;
+
+    text-shadow:
+        0 0 10px #fff,
+        0 0 25px #a96cff,
+        0 0 50px #7040ff;
+}
+
+
+header p {
+
+    margin-top: 10px;
+
+    color: #cfc7ff;
+
+    font-size: 1.05rem;
+
+    max-width: 700px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   CONTADOR
+========================= */
+
+.counter {
+
+    width:
+        min(
+            700px,
+            95%
+        );
+
+    margin:
+        25px auto;
+
+    padding: 22px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            .06
+        );
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            .15
+        );
+
+    backdrop-filter: blur(12px);
+
+    text-align: center;
+
+    box-shadow:
+        0 0 30px
+        rgba(
+            126,
+            76,
+            255,
+            .15
+        );
+}
+
+
+.counter-title {
+
+    color: #ffb5d0;
+
+    font-size: 1.2rem;
+
+    margin-bottom: 8px;
+
+    text-shadow:
+        0 0 12px
+        rgba(
+            255,
+            70,
+            130,
+            .6
+        );
+}
+
+
+.counter-subtitle {
+
+    color: #aaa3c9;
+
+    font-size: .9rem;
+
+    margin-bottom: 15px;
+}
+
+
+.time {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+
+.time-box {
+
+    min-width: 80px;
+}
+
+
+.time-box strong {
+
+    display: block;
+
+    font-size: 1.8rem;
+
+    color: white;
+
+    text-shadow:
+        0 0 15px #9b65ff;
+}
+
+
+.time-box span {
+
+    font-size: .7rem;
+
+    text-transform: uppercase;
+
+    color: #aaa3c9;
+}
+
+
+/* =========================
+   UNIVERSO
+========================= */
+
+.universe {
+
+    width:
+        min(
+            850px,
+            100%
+        );
+
+    height: 650px;
+
+    margin:
+        10px auto 0;
+
+    position: relative;
+}
+
+
+.orbit {
+
+    position: absolute;
+
+    border:
+        1px solid
+        rgba(
+            190,
+            155,
+            255,
+            .25
+        );
+
+    border-radius: 50%;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        )
+        rotate(-12deg);
+}
+
+
+.orbit.one {
+
+    width: 400px;
+    height: 170px;
+}
+
+
+.orbit.two {
+
+    width: 550px;
+    height: 250px;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        )
+        rotate(20deg);
+}
+
+
+.orbit.three {
+
+    width: 700px;
+    height: 350px;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        )
+        rotate(-25deg);
+}
+
+
+/* =========================
+   CORAZÓN
+========================= */
+
+.heart-container {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    z-index: 10;
+}
+
+
+.heart {
+
+    width: 100px;
+    height: 100px;
+
+    position: relative;
+
+    transform: rotate(-45deg);
+
+    background: #ff2f6d;
+
+    box-shadow:
+
+        0 0 20px #ff2f6d,
+
+        0 0 50px #ff2f6d,
+
+        0 0 100px
+        rgba(
+            255,
+            47,
+            109,
+            .7
+        );
+
+    animation:
+        heartbeat
+        1.4s
+        ease-in-out
+        infinite;
+}
+
+
+.heart::before,
+.heart::after {
+
+    content: "";
+
+    width: 100px;
+    height: 100px;
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    background: #ff2f6d;
+}
+
+
+.heart::before {
+
+    top: -50px;
+    left: 0;
+}
+
+
+.heart::after {
+
+    top: 0;
+    left: 50px;
+}
+
+
+@keyframes heartbeat {
+
+    0%, 100% {
+
+        transform:
+            rotate(-45deg)
+            scale(1);
+    }
+
+    15% {
+
+        transform:
+            rotate(-45deg)
+            scale(1.12);
+    }
+
+    30% {
+
+        transform:
+            rotate(-45deg)
+            scale(1);
+    }
+
+    45% {
+
+        transform:
+            rotate(-45deg)
+            scale(1.08);
+    }
+
+}
+
+
+.heart-text {
+
+    position: absolute;
+
+    width: 280px;
+
+    left: 50%;
+    top: 145px;
+
+    transform:
+        translateX(-50%);
+
+    text-align: center;
+
+    color: #fff;
+
+    font-size: 1.05rem;
+
+    text-shadow:
+        0 0 10px #ff4f86;
+}
+
+
+/* =========================
+   ORBITAS
+========================= */
+
+.orbiting {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform-origin:
+        0 0;
+}
+
+
+.orbiting.one {
+
+    animation:
+        orbit1
+        16s
+        linear
+        infinite;
+}
+
+
+.orbiting.two {
+
+    animation:
+        orbit2
+        22s
+        linear
+        infinite;
+}
+
+
+.orbiting.three {
+
+    animation:
+        orbit3
+        30s
+        linear
+        infinite;
+}
+
+
+@keyframes orbit1 {
+
+    from {
+
+        transform:
+            rotate(0deg)
+            translateX(200px)
+            rotate(0deg);
+    }
+
+    to {
+
+        transform:
+            rotate(360deg)
+            translateX(200px)
+            rotate(-360deg);
+    }
+
+}
+
+
+@keyframes orbit2 {
+
+    from {
+
+        transform:
+            rotate(0deg)
+            translateX(275px)
+            rotate(0deg);
+    }
+
+    to {
+
+        transform:
+            rotate(360deg)
+            translateX(275px)
+            rotate(-360deg);
+    }
+
+}
+
+
+@keyframes orbit3 {
+
+    from {
+
+        transform:
+            rotate(0deg)
+            translateX(350px)
+            rotate(0deg);
+    }
+
+    to {
+
+        transform:
+            rotate(360deg)
+            translateX(350px)
+            rotate(-360deg);
+    }
+
+}
+
+
+/* =========================
+   FOTOS
+========================= */
+
+.memory {
+
+    width: 120px;
+
+    padding: 7px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            .92
+        );
+
+    color: #222;
+
+    border-radius: 7px;
+
+    box-shadow:
+
+        0 0 20px
+        rgba(
+            255,
+            255,
+            255,
+            .3
+        ),
+
+        0 0 40px
+        rgba(
+            160,
+            100,
+            255,
+            .2
+        );
+
+    transform: rotate(-4deg);
+}
+
+
+.memory img {
+
+    width: 100%;
+
+    height: 115px;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 4px;
+}
+
+
+.memory p {
+
+    font-family:
+        "Comic Sans MS",
+        cursive;
+
+    font-size: .75rem;
+
+    text-align: center;
+
+    padding:
+        6px
+        2px
+        2px;
+}
+
+
+/* =========================
+   RECUERDOS
+========================= */
+
+.memories {
+
+    width:
+        min(
+            1100px,
+            95%
+        );
+
+    margin:
+        30px auto;
+
+    text-align: center;
+}
+
+
+.memories h2 {
+
+    font-size: 2rem;
+
+    margin-bottom: 25px;
+
+    text-shadow:
+        0 0 15px #956cff;
+}
+
+
+.cards {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    flex-wrap: wrap;
+}
+
+
+.card {
+
+    width: 220px;
+
+    min-height: 170px;
+
+    padding: 20px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            .06
+        );
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            .13
+        );
+
+    backdrop-filter: blur(10px);
+
+    transition: .4s;
+}
+
+
+.card:hover {
+
+    transform:
+        translateY(-8px)
+        scale(1.03);
+
+    box-shadow:
+        0 0 30px
+        rgba(
+            151,
+            105,
+            255,
+            .3
+        );
+}
+
+
+.card .emoji {
+
+    font-size: 2rem;
+
+    margin-bottom: 10px;
+}
+
+
+.card h3 {
+
+    margin-bottom: 7px;
+}
+
+
+.card p {
+
+    color: #bbb4d2;
+
+    font-size: .9rem;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   MENSAJE FINAL
+========================= */
+
+.final-message {
+
+    width:
+        min(
+            700px,
+            92%
+        );
+
+    margin:
+        70px auto 0;
+
+    text-align: center;
+
+    padding:
+        35px
+        25px;
+
+    border-radius: 25px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            .05
+        );
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            .15
+        );
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 0 40px
+        rgba(
+            130,
+            80,
+            255,
+            .08
+        );
+}
+
+
+.final-message h2 {
+
+    font-size: 2rem;
+
+    margin-bottom: 20px;
+
+    color: #ffb6d0;
+}
+
+
+.final-message p {
+
+    line-height: 1.8;
+
+    color: #ddd6e8;
+
+    font-size: .98rem;
+}
+
+
+/* =========================
+   ESTRELLAS FUGACES
+========================= */
+
+.shooting-star {
+
+    position: fixed;
+
+    width: 120px;
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            white,
+            transparent
+        );
+
+    transform: rotate(-35deg);
+
+    opacity: 0;
+
+    animation:
+        shooting
+        5s
+        linear
+        infinite;
+}
+
+
+.shooting-star:nth-child(1) {
+
+    top: 15%;
+    left: 10%;
+
+    animation-delay: 2s;
+}
+
+
+.shooting-star:nth-child(2) {
+
+    top: 35%;
+    left: 80%;
+
+    animation-delay: 5s;
+}
+
+
+.shooting-star:nth-child(3) {
+
+    top: 65%;
+    left: 20%;
+
+    animation-delay: 8s;
+}
+
+
+@keyframes shooting {
+
+    0% {
+
+        transform:
+            translate(0,0)
+            rotate(-35deg);
+
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    20% {
+
+        transform:
+            translate(300px,180px)
+            rotate(-35deg);
+
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================
+   ANIMACIÓN INICIAL
+========================= */
+
+@keyframes fadeDown {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(-30px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media(max-width: 700px) {
+
+    .universe {
+        height: 520px;
+    }
+
+
+    .orbit.one {
+
+        width: 270px;
+        height: 130px;
+    }
+
+
+    .orbit.two {
+
+        width: 370px;
+        height: 180px;
+    }
+
+
+    .orbit.three {
+
+        width: 470px;
+        height: 250px;
+    }
+
+
+    .heart {
+
+        width: 75px;
+        height: 75px;
+    }
+
+
+    .heart::before,
+    .heart::after {
+
+        width: 75px;
+        height: 75px;
+    }
+
+
+    .heart::before {
+        top: -37px;
+    }
+
+
+    .heart::after {
+        left: 37px;
+    }
+
+
+    .memory {
+
+        width: 85px;
+    }
+
+
+    .memory img {
+
+        height: 80px;
+    }
+
+
+    @keyframes orbit1 {
+
+        from {
+
+            transform:
+                rotate(0deg)
+                translateX(135px)
+                rotate(0deg);
+        }
+
+        to {
+
+            transform:
+                rotate(360deg)
+                translateX(135px)
+                rotate(-360deg);
+        }
+
+    }
+
+
+    @keyframes orbit2 {
+
+        from {
+
+            transform:
+                rotate(0deg)
+                translateX(185px)
+                rotate(0deg);
+        }
+
+        to {
+
+            transform:
+                rotate(360deg)
+                translateX(185px)
+                rotate(-360deg);
+        }
+
+    }
+
+
+    @keyframes orbit3 {
+
+        from {
+
+            transform:
+                rotate(0deg)
+                translateX(235px)
+                rotate(0deg);
+        }
+
+        to {
+
+            transform:
+                rotate(360deg)
+                translateX(235px)
+                rotate(-360deg);
+        }
+
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     FONDO
+========================= -->
+
+<div class="space">
+
+    <div class="stars"></div>
+
+    <div class="stars2"></div>
+
+    <div class="stars3"></div>
+
+    <div class="aurora"></div>
+
+    <div class="aurora two"></div>
+
+    <div class="shooting-star"></div>
+
+    <div class="shooting-star"></div>
+
+    <div class="shooting-star"></div>
+
+</div>
+
+
+
+<div class="page">
+
+
+<!-- =========================
+     ENCABEZADO
+========================= -->
+
+<header>
+
+    <h1>
+        🌌 Nuestro propio universo ❤️
+    </h1>
+
+    <p>
+        Hoy cumplimos 3 meses juntos y quería hacerte
+        algo diferente, algo que sea solo nuestro. ❤️
+    </p>
+
+</header>
+
+
+
+<!-- =========================
+     CONTADOR
+========================= -->
+
+<div class="counter">
+
+    <div class="counter-title">
+
+        ❤️ 3 meses contigo ❤️
+
+    </div>
+
+
+    <div class="counter-subtitle">
+
+        24 de julio → 24 de octubre
+        <br>
+        Y esto recién comienza. ✨
+
+    </div>
+
+
+    <div class="time">
+
+
+        <div class="time-box">
+
+            <strong id="days">
+                0
+            </strong>
+
+            <span>
+                Días
+            </span>
+
+        </div>
+
+
+        <div class="time-box">
+
+            <strong id="hours">
+                0
+            </strong>
+
+            <span>
+                Horas
+            </span>
+
+        </div>
+
+
+        <div class="time-box">
+
+            <strong id="minutes">
+                0
+            </strong>
+
+            <span>
+                Minutos
+            </span>
+
+        </div>
+
+
+        <div class="time-box">
+
+            <strong id="seconds">
+                0
+            </strong>
+
+            <span>
+                Segundos
+            </span>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================
+     UNIVERSO
+========================= -->
+
+<section class="universe">
+
+
+    <div class="orbit one"></div>
+
+    <div class="orbit two"></div>
+
+    <div class="orbit three"></div>
+
+
+
+    <!-- CORAZÓN -->
+
+    <div class="heart-container">
+
+
+        <div class="heart"></div>
+
+
+        <div class="heart-text">
+
+            3 meses contigo y todavía
+            me sigues haciendo feliz ❤️
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- FOTO 1 -->
+
+    <div class="orbiting one">
+
+        <div class="memory">
+
+
+            <!-- CAMBIA POR TU FOTO -->
+
+            <img src="foto1.jpg">
+
+
+            <p>
+
+                Uno de mis recuerdos
+                favoritos contigo ❤️
+
+            </p>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- FOTO 2 -->
+
+    <div class="orbiting two">
+
+        <div class="memory">
+
+
+            <!-- CAMBIA POR TU FOTO -->
+
+            <img src="foto2.jpg">
+
+
+            <p>
+
+                Contigo hasta los momentos
+                más simples son especiales mi gorgojito.
+
+            </p>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- FOTO 3 -->
+
+    <div class="orbiting three">
+
+        <div class="memory">
+
+
+            <!-- CAMBIA POR TU FOTO -->
+
+            <img src="foto3.jpg">
+
+
+            <p>
+
+                Otro recuerdo muy pro 😎
+                 
+
+            </p>
+
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================
+     NUESTROS 3 MESES
+========================= -->
+
+<section class="memories">
+
+
+    <h2>
+
+        Nuestros primeros 3 meses ❤️
+
+    </h2>
+
+
+    <div class="cards">
+
+
+
+        <!-- TARJETA 1 -->
+
+        <div class="card">
+
+
+            <div class="emoji">
+                ❤️
+            </div>
+
+
+            <h3>
+                Lo que siento
+            </h3>
+
+
+            <p>
+
+                Ya son 3 meses juntos y aunque pueda
+                parecer poco, hemos vivido un montón
+                de cosas en este tiempo. Me alegra
+                muchísimo poder compartir todo esto contigo.
+
+            </p>
+
+
+        </div>
+
+
+
+        <!-- TARJETA 2 -->
+
+        <div class="card">
+
+
+            <div class="emoji">
+                🌙
+            </div>
+
+
+            <h3>
+                Nuestros momentos
+            </h3>
+
+
+            <p>
+
+                Me encanta recordar todas las veces
+                que hemos estado juntos, desde las
+                cosas más simples hasta esos momentos
+                que sé que nunca voy a olvidar.
+
+            </p>
+
+
+        </div>
+
+
+
+        <!-- TARJETA 3 -->
+
+        <div class="card">
+
+
+            <div class="emoji">
+                ⭐
+            </div>
+
+
+            <h3>
+                Tú y yo
+            </h3>
+
+
+            <p>
+
+                No todo ha sido perfecto y hemos tenido
+                nuestros momentos difíciles, pero también
+                hemos tenido muchísimos momentos bonitos.
+                Y a pesar de todo, seguimos aquí.
+
+            </p>
+
+
+        </div>
+
+
+
+        <!-- TARJETA 4 -->
+
+        <div class="card">
+
+
+            <div class="emoji">
+                🚀
+            </div>
+
+
+            <h3>
+                Lo que viene
+            </h3>
+
+
+            <p>
+
+                Estos 3 meses son solamente una pequeña
+                parte de todo lo que todavía nos falta vivir.
+                Espero que podamos seguir creando muchos
+                recuerdos más juntos.
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     MENSAJE FINAL
+========================= -->
+
+<section class="final-message">
+
+
+    <h2>
+        Para ti, mi cachetona ❤️
+    </h2>
+
+
+    <p>
+
+
+        Hoy cumplimos 3 meses juntos y quería
+        darte algo que pudiera representar un poquito
+        de todo lo que hemos vivido hasta ahora.
+
+
+        <br><br>
+
+
+        Sé que en estos 3 meses hemos pasado por
+        momentos muy bonitos y también por momentos
+        difíciles, pero cada uno de ellos forma parte
+        de nuestra historia.
+
+
+        Y aunque no todo haya sido perfecto,
+        aun seguimos aquí,
+        compartiendo nuestras vidas.
+
+
+        <br><br>
+
+
+        Me gusta pensar que este es solamente
+        el comienzo y que todavía nos quedan
+        muchísimas cosas por vivir.
+
+
+        Lugares por conocer, tonterías que hacer,
+        momentos para reírnos y recuerdos que
+        algún día vamos a mirar juntos.
+
+
+        <br><br>
+
+
+        Gracias por estos 3 meses, por cada momento,
+        por las conversaciones, por las risas y por
+        todas esas pequeñas cosas que quizás parecen
+        simples pero que para mí significan muchísimo.
+
+
+        <br><br>
+
+
+        Espero que este pequeño universo te recuerde
+        que eres una persona muy importante para mí
+        y que todo esto lo hice pensando en ti.
+
+
+        <br><br>
+
+
+        Felices 3 meses, mi cachetona hermosa. ❤️
+
+
+        <br><br>
+
+
+        Te amoooooooo muchísimo y espero que podamos
+        seguir sumando muchos meses más juntos. 🥹❤️
+
+
+    </p>
+
+
+</section>
+
+
+</div>
+
+
+
+<script>
+
+
+/* =========================
+   CONTADOR
+========================= */
+
+
+const startDate =
+    new Date(
+        "2026-07-24T00:00:00"
+    );
+
+
+function updateCounter() {
+
+
+    const now =
+        new Date();
+
+
+    let difference =
+        now - startDate;
+
+
+    if (difference < 0) {
+
+        difference = 0;
+
+    }
+
+
+    const totalSeconds =
+        Math.floor(
+            difference / 1000
+        );
+
+
+    const days =
+        Math.floor(
+            totalSeconds / 86400
+        );
+
+
+    const hours =
+        Math.floor(
+            (totalSeconds % 86400)
+            / 3600
+        );
+
+
+    const minutes =
+        Math.floor(
+            (totalSeconds % 3600)
+            / 60
+        );
+
+
+    const seconds =
+        totalSeconds % 60;
+
+
+    document
+        .getElementById("days")
+        .textContent = days;
+
+
+    document
+        .getElementById("hours")
+        .textContent =
+            String(hours)
+            .padStart(2, "0");
+
+
+    document
+        .getElementById("minutes")
+        .textContent =
+            String(minutes)
+            .padStart(2, "0");
+
+
+    document
+        .getElementById("seconds")
+        .textContent =
+            String(seconds)
+            .padStart(2, "0");
+
+}
+
+
+updateCounter();
+
+
+setInterval(
+    updateCounter,
+    1000
+);
+
+
+
+/* =========================
+   CORAZONES FLOTANDO
+========================= */
+
+
+function createHeart() {
+
+
+    const heart =
+        document.createElement("div");
+
+
+    heart.innerHTML = "❤";
+
+
+    heart.style.position =
+        "fixed";
+
+
+    heart.style.left =
+        Math.random() * 100 + "vw";
+
+
+    heart.style.bottom =
+        "-30px";
+
+
+    heart.style.fontSize =
+        (
+            Math.random() * 15 + 10
+        ) + "px";
+
+
+    heart.style.color =
+        "#ff4f91";
+
+
+    heart.style.opacity =
+        "0.7";
+
+
+    heart.style.pointerEvents =
+        "none";
+
+
+    heart.style.zIndex =
+        "2";
+
+
+    document.body.appendChild(
+        heart
+    );
+
+
+    const duration =
+        Math.random() * 5000 + 5000;
+
+
+    heart.animate(
+
+        [
+
+            {
+                transform:
+                    "translateY(0) scale(.5)",
+
+                opacity: 0
+            },
+
+
+            {
+
+                transform:
+                    "translateY(-50vh) scale(1)",
+
+                opacity: .7
+            },
+
+
+            {
+
+                transform:
+                    "translateY(-110vh) scale(.3)",
+
+                opacity: 0
+            }
+
+        ],
+
+        {
+
+            duration:
+                duration,
+
+            easing:
+                "linear"
+
+        }
+
+    );
+
+
+    setTimeout(
+
+        () => {
+
+            heart.remove();
+
+        },
+
+        duration
+
+    );
+
+}
+
+
+setInterval(
+    createHeart,
+    900
+);
+
+
+</script>
+
+
+</body>
+</html>
